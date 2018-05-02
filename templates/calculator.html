@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <style>
+      .calculator {
+        height: 30em;
+        width: 20em;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .expression {
+        font-size: 1.5em;
+      }
+      .expression::placeholder {
+        color: darkgrey;
+      }
+      .key {
+        width: 3em;
+        height: 3em;
+        padding: 0;
+        margin-right: 0 !important;
+        margin-top: 1.3em;
+      }
+    </style>
+  </head>
+  <body>
+    <form class="box calculator" method="post">
+      <input type="text" class="input expression" name="problem" placeholder="{{ answer }}">
+      <div class="columns buttons">
+        <div class="column">
+          <button type="button" class="button key" onclick="document.getElementsByClassName('expression')[0].value += event.target.innerHTML">7</button>
+          <button type="button" class="button key" onclick="document.getElementsByClassName('expression')[0].value += event.target.innerHTML">4</button>
+          <button type="button" class="button key" onclick="document.getElementsByClassName('expression')[0].value += event.target.innerHTML">1</button>
+          <button type="button" class="button key" onclick="document.getElementsByClassName('expression')[0].value += event.target.innerHTML">0</button>
+          <button type="button" class="button key is-light" onclick="document.getElementsByClassName('expression')[0].value += event.target.innerHTML">.</button>
+        </div>
+        <div class="column">
+          <button type="button" class="button key" onclick="document.getElementsByClassName('expression')[0].value += event.target.innerHTML">8</button>
+          <button type="button" class="button key" onclick="document.getElementsByClassName('expression')[0].value += event.target.innerHTML">5</button>
+          <button type="button" class="button key" onclick="document.getElementsByClassName('expression')[0].value += event.target.innerHTML">2</button>
+          <button type="button" class="button key is-light" onclick="document.getElementsByClassName('expression')[0].value += event.target.innerHTML">(</button>
+          <button type="button" class="button key is-light" onclick="document.getElementsByClassName('expression')[0].value += event.target.innerHTML">%</button>
+        </div>
+        <div class="column">
+          <button type="button" class="button key" onclick="document.getElementsByClassName('expression')[0].value += event.target.innerHTML">9</button>
+          <button type="button" class="button key" onclick="document.getElementsByClassName('expression')[0].value += event.target.innerHTML">6</button>
+          <button type="button" class="button key" onclick="document.getElementsByClassName('expression')[0].value += event.target.innerHTML">3</button>
+          <button type="button" class="button key is-light" onclick="document.getElementsByClassName('expression')[0].value += event.target.innerHTML">)</button>
+          <button type="button" class="button key is-warning" onclick="document.getElementsByClassName('expression')[0].value = document.getElementsByClassName('expression')[0].value.slice(0, -1)">Del</button>
+        </div>
+        <div class="column">
+          <button type="button" class="button button is-light key" onclick="document.getElementsByClassName('expression')[0].value += event.target.innerHTML">+</button>
+          <button type="button" class="button button is-light key" onclick="document.getElementsByClassName('expression')[0].value += event.target.innerHTML">-</button>
+          <button type="button" class="button button is-light key" onclick="document.getElementsByClassName('expression')[0].value += event.target.innerHTML">*</button>
+          <button type="button" class="button is-light key" onclick="document.getElementsByClassName('expression')[0].value += event.target.innerHTML">/</button>
+          <button class="button button is-primary key" type="submit">=</button>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
